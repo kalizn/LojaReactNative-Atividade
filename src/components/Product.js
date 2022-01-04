@@ -10,7 +10,7 @@ export function Product({name, price, image, onPress}) {
       />
       <View style={styles.infoContainer}>
         <Text style={styles.name}>{name}</Text>
-        <Text style={styles.price}>$ {price}</Text>
+        <Text style={styles.price}>R$ {price}</Text>
       </View>
     </TouchableOpacity>
   );

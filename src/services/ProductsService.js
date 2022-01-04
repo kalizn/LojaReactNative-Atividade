@@ -1,25 +1,47 @@
 const PRODUCTS = [
     {
         id: 100,
-        name: 'ReactProX Headset',
-        price: 350,
+        name: 'Pingente de Ouro Família',
+        price: 199.99,
         image: require('../images/prod1.jpg'),
-        description: 'A headset combines a headphone with microphone. Headsets are made with either a single-earpiece (mono) or a double-earpiece (mono to both ears or stereo).'
+        description: 'Adorno em Ouro, pingente Família 4 integrantes.'
     },
     {
         id: 101,
-        name: 'FastLane Toy Car',
-        price: 600,
+        name: 'Pingente de Obsidiana',
+        price: 799.99,
         image: require('../images/prod2.jpg'),
-        description: 'A model car, or toy car, is a miniature representation of an automobile. Other miniature motor vehicles, such as trucks, buses, or even ATVs, etc. are often included in this general category.'
+        description: 'Adorno em Obsidiana, pingente Yin e Yang.'
     },
     {
         id: 102,
-        name: 'SweetHome Cupcake',
-        price: 2,
+        name: 'Pringente de Ouro Leopardo',
+        price: 199.99,
         image: require('../images/prod3.jpg'),
-        description: 'A cupcake (also British English: fairy cake; Hiberno-English: bun; Australian English: fairy cake or patty cake[1]) is a small cake designed to serve one person.'
+        description: 'Adorno em Ouro, pingente de Leopardo.'
+    },
+    {
+        id:103,
+        name: 'Pingente de Cobre',
+        price: 99.99,
+        image: require('../images/prod4.jpg'),
+        description: 'Adorno em Cobre, pingente Estrela de David'
+    },
+    {
+        id:104,
+        name: 'Pingente de Ouro Cavalgada',
+        price: 159.99,
+        image: require('../images/prod5.jpg'),
+        description: 'Adorno em Ouro, pingente edição Cavalgada'
+    },
+    {
+        id:105,
+        name: 'Pingente de Ouro Gamer',
+        price: 499.99,
+        image: require('../images/prod6.jpg'),
+        description: 'Adorno em Ouro, pingente Olho da Verdade - Edição Gamer'
     }
+    
 ];
 
 export function getProducts() {

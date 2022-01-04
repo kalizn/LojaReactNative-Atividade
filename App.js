@@ -9,6 +9,8 @@ import { Cart } from './src/screens/Cart.js';
 import { CartIcon } from './src/components/CartIcon.js';
 import { CartProvider } from './src/CartContext.js';
 
+//import { Home } from '.src/screens/Home.js';
+
 const Stack = createNativeStackNavigator();
 
 function App() {

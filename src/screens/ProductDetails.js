@@ -35,7 +35,7 @@ export function ProductDetails({route}) {
         />
         <View style={styles.infoContainer}>
           <Text style={styles.name}>{product.name}</Text>
-          <Text style={styles.price}>$ {product.price}</Text>
+          <Text style={styles.price}>R$ {product.price}</Text>
           <Text style={styles.description}>{product.description}</Text>
             <Button
             onPress={onAddToCart}

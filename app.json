@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "e-commerce-app",
-    "slug": "e-commerce-app",
+    "name": "Loja de Pingentes",
+    "slug": "lojaPingentes",
     "version": "1.0.0",
     "orientation": "default",
     "icon": "./assets/icon.png",
@@ -21,12 +21,10 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
+        "foregroundImage": "./assets/icon.png",
         "backgroundColor": "#FFFFFF"
-      }
-    },
-    "web": {
-      "favicon": "./assets/favicon.png"
+      },
+      "package": "com.kalizn.lojaRN"
     }
   }
 }
