@@ -8,8 +8,7 @@ import { ProductDetails } from './src/screens/ProductDetails.js';
 import { Cart } from './src/screens/Cart.js';
 import { CartIcon } from './src/components/CartIcon.js';
 import { CartProvider } from './src/CartContext.js';
-
-//import { Home } from '.src/screens/Home.js';
+import { Home } from './src/screens/Home.js';
 
 const Stack = createNativeStackNavigator();
 
@@ -18,6 +17,7 @@ function App() {
     <CartProvider>
       <NavigationContainer>
         <Stack.Navigator>
+          <Stack.Screen name='Home' component={Home} />
           <Stack.Screen name='Products' component={ProductsList} 
           options={({ navigation }) => ({
             title: 'Produtos',
