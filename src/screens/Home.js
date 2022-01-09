@@ -1,20 +1,23 @@
-import React, { useState, useContext} from 'react';
+import React, { useState, useContext, useEffect} from 'react';
 import { Text, SafeAreaView, StyleSheet, TextInput, TouchableOpacity } from 'react-native';
-import { ProductsList } from './ProductsList';
+
 
 export function Home({navigation}){
   const [input, setInput] = useState('');
 
   function verify(){
-    if (input === '') {alert('Insira um nome válido!'); return;};
+    if (input === '') {
+      alert('Insira um nome válido!')
+    } else {
+      return navigation.navigate("Products", {input: input})
+    };
     
-    return navigation.navigate('ProductsList');
   }
 
-  
   return(
 
     <SafeAreaView style={styles.container}>
+      <Text style={styles.title}>Loja do Antonio Neto</Text>
       <TextInput 
         placeholder='Usuário'
         placeholderTextColor='#747474'
@@ -48,11 +51,18 @@ const styles = StyleSheet.create({
     marginTop: 20,
     flexDirection: 'row',
     alignItems: 'center',
-    color: '#FFF',
+    color: '#DDD',
     alignSelf: 'center',
   },
   container:{
     flex:1,
     backgroundColor: '#eeeeee',
+  },
+  title:{
+    marginTop: 10,
+    paddingBottom: 0,
+    fontSize: 15,
+    textAlign: 'center',
+    color: '#000',
   },
 })

@@ -6,7 +6,7 @@ export const CartContext = createContext();
 
 export function CartProvider(props) {
   const [items, setItems] = useState([]);
-  
+
   function addItemToCart(id) {
     const product = getProduct(id);
     setItems((prevItems) => {
@@ -31,6 +31,7 @@ export function CartProvider(props) {
     });
 
   }
+
 
   function getItemsCount() {
       return items.reduce((sum, item) => (sum + item.qty), 0);

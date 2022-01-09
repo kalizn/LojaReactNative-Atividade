@@ -1,21 +1,33 @@
 import React, { useEffect, useState, useContext } from 'react';
-import { View, Text, Button, FlatList, StyleSheet } from 'react-native';
+import { View, Text, Button, FlatList, StyleSheet, TouchableOpacity } from 'react-native';
 
 import { CartContext } from '../CartContext';
 
 export function Cart ({navigation}) {
 
-  const {items, getItemsCount, getTotalPrice} = useContext(CartContext);
+  const {items, getItemsCount, getTotalPrice, removeAll} = useContext(CartContext);
   
+  function back() {
+    navigation.navigate('Home');
+
+  }
+
   function Totals() {
     let [total, setTotal] = useState(0);
     useEffect(() => {
       setTotal(getTotalPrice());
     });
     return (
-       <View style={styles.cartLineTotal}>
-          <Text style={[styles.lineLeft, styles.lineTotal]}>Total</Text>
-          <Text style={styles.lineRight}>R$ {total}</Text>
+      <View>
+        <View style={styles.cartLineTotal}>
+            <Text style={[styles.lineLeft, styles.lineTotal]}>Total</Text>
+            <Text style={styles.lineRight}>R$ {total}</Text>
+
+            
+        </View>
+        <View>
+          <TouchableOpacity onPress={back} style={styles.head}>Finalizar Compra</TouchableOpacity>
+        </View>
        </View>
     );
   }
@@ -73,5 +85,13 @@ const styles = StyleSheet.create({
     backgroundColor: '#eeeeee',
     paddingVertical: 8,
     marginHorizontal: 8,
+  },
+  head:{
+    marginLeft:10,
+    marginTop: 20,
+    flexDirection: 'row',
+    alignItems: 'center',
+    color: '#000',
+    alignSelf: 'center',
   },
 });

@@ -4,17 +4,19 @@ import { View, Text, FlatList, StyleSheet } from 'react-native';
 import { Product } from '../components/Product.js';
 import { getProducts } from '../services/ProductsService.js';
 
-export function ProductsList ({navigation}) {
+export function ProductsList ({navigation, route}) {
 
   function renderProduct({item: product}) {
     return (
       <Product {...product} 
+      
       onPress={() => {
         navigation.navigate('ProductDetails', {
           productId: product.id,
         });
       }}
       />
+      
     );
   }
   
@@ -25,13 +27,17 @@ export function ProductsList ({navigation}) {
   });
   
   return (
-    <FlatList
-      style={styles.productsList}
-      contentContainerStyle={styles.productsListContainer}
-      keyExtractor={(item) => item.id.toString()}
-      data={products}
-      renderItem={renderProduct}
-    />
+    <View>
+      <Text style={styles.title}>Loja do Antonio Neto</Text>
+      <Text style={styles.title}>Bem vindo {route.params.input}</Text>
+      <FlatList
+        style={styles.productsList}
+        contentContainerStyle={styles.productsListContainer}
+        keyExtractor={(item) => item.id.toString()}
+        data={products}
+        renderItem={renderProduct}
+    /></View>
+    
   );
 }
 
@@ -43,5 +49,12 @@ const styles = StyleSheet.create({
     backgroundColor: '#eeeeee',
     paddingVertical: 8,
     marginHorizontal: 8,
+  },
+  title:{
+    marginTop: 0,
+    paddingBottom: 0,
+    fontSize: 15,
+    textAlign: 'center',
+    color: '#000',
   },
 });
